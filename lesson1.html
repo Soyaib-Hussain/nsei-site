@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shift 1: Welcome the Patient – NSEI Ward Duty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--d:#04201a;--d2:#0a3329;--em:#19c28b;--gold:#f4c25b;--co:#ff5a5f;--serif:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"Hind Siliguri",system-ui,"Noto Sans Bengali",Arial,sans-serif;color:#fff;font-size:17px;line-height:1.6;background:radial-gradient(700px 420px at 90% -5%,rgba(25,194,139,.4),transparent 60%),radial-gradient(600px 400px at -10% 105%,rgba(244,194,91,.22),transparent 60%),var(--d)}
+.app{max-width:560px;margin:0 auto;padding:18px 18px 60px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.top a{color:#cfe3da;text-decoration:none;font-size:15px}
+.top b{font-family:var(--serif);color:var(--gold);font-size:18px}
+.tm{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:10px 14px;margin-bottom:14px}
+.tm div.l{display:flex;justify-content:space-between;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:#cfe3da;margin-bottom:6px}
+.bar{height:12px;border-radius:12px;background:rgba(255,255,255,.12);overflow:hidden}
+#tf{height:100%;width:50%;border-radius:12px;background:linear-gradient(90deg,var(--co),var(--gold),var(--em));transition:width .6s}
+.dots{display:flex;gap:6px;justify-content:center;margin-bottom:16px}.dots i{width:26px;height:5px;border-radius:5px;background:rgba(255,255,255,.18)}.dots i.on{background:var(--gold)}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:24px 20px;backdrop-filter:blur(10px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);animation:in .5s}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.k{color:var(--gold);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin:0 0 6px}
+h1,h2{font-family:var(--serif);margin:0 0 10px;line-height:1.2}h1{font-size:32px}h2{font-size:25px}
+p{margin:0 0 14px;color:#d3e6dc}
+.btn,.opt{font:inherit;cursor:pointer;border:0;color:#fff}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:600;font-size:17px;background:linear-gradient(135deg,var(--co),#e63946);box-shadow:0 12px 28px -10px rgba(255,90,95,.7);text-decoration:none;margin-top:6px}
+.btn.g{background:rgba(255,255,255,.1);box-shadow:none;border:1px solid rgba(255,255,255,.3)}
+.btn[disabled]{opacity:.4;cursor:default}
+.opt{display:block;width:100%;text-align:left;padding:14px 16px;margin-bottom:10px;border-radius:16px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.2);font-size:17px;transition:.2s}
+.opt:hover:not([disabled]){background:rgba(255,255,255,.17)}
+.opt small{display:none;color:var(--gold);font-size:14px;margin-top:2px}.bn .opt small{display:block}
+.opt.ok{background:rgba(25,194,139,.3);border-color:var(--em)}.opt.no{background:rgba(255,90,95,.25);border-color:var(--co);animation:sh .35s}
+@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.say{display:flex;align-items:center;gap:12px;background:#fff;color:var(--d);border-radius:18px;padding:14px 16px;margin-bottom:16px;font-family:var(--serif);font-size:19px}
+.say span{flex:1}.sp{width:46px;height:46px;border-radius:50%;background:var(--d);color:#fff;font-size:20px;flex:none}
+.pt{background:#fff;color:var(--d);border-radius:18px 18px 18px 4px;padding:13px 16px;margin-bottom:16px;font-weight:500}
+.fb{min-height:26px;margin:6px 0 10px;font-weight:600}.fb.ok{color:#7ff0c4}.fb.no{color:#ff9a9d}
+.area{min-height:62px;border:2px dashed rgba(255,255,255,.3);border-radius:16px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.pool{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.w{padding:9px 16px;border-radius:12px;background:#fff;color:var(--d);font-weight:600;font-size:17px;border:0;cursor:pointer;font-family:inherit}
+.mic{width:92px;height:92px;border-radius:50%;font-size:36px;margin:8px auto 12px;display:block;background:linear-gradient(135deg,var(--em),#0e9f72);box-shadow:0 0 0 0 rgba(25,194,139,.6)}
+.mic.on{animation:pl 1.2s infinite}@keyframes pl{to{box-shadow:0 0 0 24px rgba(25,194,139,0)}}
+.c{text-align:center}
+.stars{font-size:46px;letter-spacing:6px;margin:6px 0}
+.big{font-family:var(--serif);font-size:52px;color:var(--gold);line-height:1}
+.hint{background:none;border:0;color:var(--gold);cursor:pointer;font:inherit;font-size:15px;text-decoration:underline;padding:0;margin-bottom:12px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="top"><a href="index.html">← NSEI</a><b>Ward Duty</b></div>
+<div class="tm"><div class="l"><span>Patient Trust · রোগীর আস্থা</span><span id="tv">50</span></div><div class="bar"><div id="tf"></div></div></div>
+<div class="dots" id="dots"></div>
+<div class="card" id="st"></div>
+</div>
+<script>
+var $=function(i){return document.getElementById(i)},S={t:50,i:0,star:0},st=$('st');
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function tr(d){S.t=Math.max(0,Math.min(100,S.t+d));$('tf').style.width=S.t+'%';$('tv').textContent=S.t}
+function speak(t){try{var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=.88;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function dots(){var h='';for(var i=0;i<5;i++)h+='<i class="'+(i<S.i?'on':'')+'"></i>';$('dots').innerHTML=h}
+function show(h){st.style.animation='none';st.offsetHeight;st.style.animation='';st.innerHTML=h;dots()}
+function nx(f){return '<button class="btn" id="nx" onclick="'+f+'" style="display:none">Next →</button>'}
+function fin(ok,msg){var f=$('fb');f.className='fb '+(ok?'ok':'no');f.textContent=msg;$('nx').style.display='inline-block';tr(ok?7:-7)}
+
+function intro(){S.t=50;S.i=0;tr(0);show('<p class="k">Shift 1</p><h1>Welcome the Patient</h1><p>আপনি ওয়ার্ডের নার্স। নতুন রোগী এসেছেন। সঠিক ও নম্র ইংরেজিতে তাঁর <b style="color:var(--gold)">আস্থা</b> জিতুন।</p><p>৪টি ছোট গেম, তারপর আপনার Shift Report।</p><button class="btn" onclick="g1(0)">Start Shift →</button>')}
+
+var L=[{en:'Good morning. How are you feeling today?',o:[['সুপ্রভাত। আজ কেমন লাগছে?',1],['শুভ রাত্রি। আপনি ঘুমান।',0],['আপনার নাম কী?',0]]},{en:'I am your nurse. I will take care of you.',o:[['আমি আপনার নার্স। আমি আপনার যত্ন নেব।',1],['আমি ডাক্তার। আপনি বাড়ি যান।',0],['আমি আপনার বন্ধু।',0]]}];
+function g1(n){S.i=1;var q=L[n],h='<p class="k">Game 1 · Listen &amp; Pick ('+(n+1)+'/2)</p><h2>শুনুন, সঠিক অর্থ বাছুন</h2><div class="say"><button class="sp" onclick="speak(\''+q.en+'\')" aria-label="Play">🔊</button><span id="tx" style="display:none">'+q.en+'</span><span id="hd">Tap 🔊 to listen</span></div><div id="op">';
+sh(q.o).forEach(function(o){h+='<button class="opt" data-k="'+o[1]+'">'+o[0]+'</button>'});
+h+='</div><div class="fb" id="fb"></div>'+nx(n<1?'g1(1)':'g2(0)');show(h);
+if(!('speechSynthesis' in window)){$('tx').style.display='block';$('hd').style.display='none'}else setTimeout(function(){speak(q.en)},400);
+document.querySelectorAll('#op .opt').forEach(function(b){b.onclick=function(){var ok=b.dataset.k=='1';document.querySelectorAll('#op .opt').forEach(function(x){x.disabled=true;if(x.dataset.k=='1')x.classList.add('ok')});if(!ok)b.classList.add('no');$('tx').style.display='block';$('hd').style.display='none';fin(ok,ok?'Correct! ✓':'প্রায়। সঠিক উত্তরটি সবুজ।')}})}
+
+var B=[{w:['How','are','you','feeling','today?'],bn:'আজ আপনি কেমন বোধ করছেন?'},{w:['I','will','take','care','of','you.'],bn:'আমি আপনার যত্ন নেব।'}];
+function g2(n){S.i=2;var q=B[n],a=[],h='<p class="k">Game 2 · Build the Sentence ('+(n+1)+'/2)</p><h2>শব্দ সাজিয়ে বাক্য বানান</h2><p>অর্থ: <b style="color:var(--gold)">'+q.bn+'</b></p><div class="area" id="ar"></div><div class="pool" id="pl"></div><button class="btn g" id="ck" style="margin-right:8px">Check</button><div class="fb" id="fb"></div>'+nx(n<1?'g2(1)':'g3()');show(h);
+var ord=sh(q.w.map(function(w,i){return i}));function draw(){var p='',r='';ord.forEach(function(i){if(a.indexOf(i)<0)p+='<button class="w" data-i="'+i+'">'+q.w[i]+'</button>'});a.forEach(function(i){r+='<button class="w" data-i="'+i+'">'+q.w[i]+'</button>'});$('pl').innerHTML=p;$('ar').innerHTML=r;
+document.querySelectorAll('#pl .w').forEach(function(b){b.onclick=function(){a.push(+b.dataset.i);draw()}});document.querySelectorAll('#ar .w').forEach(function(b){b.onclick=function(){a.splice(a.indexOf(+b.dataset.i),1);draw()}})}
+draw();
+$('ck').onclick=function(){if(a.length<q.w.length)return;var ok=a.every(function(v,i){return v==i});$('ck').disabled=true;fin(ok,ok?'Perfect sentence! ✓':'ঠিক ক্রম: '+q.w.join(' '))}}
+
+function g3(){S.i=3;var T='Good morning. How are you feeling today?',h='<p class="k">Game 3 · Say It</p><h2>জোরে বলুন</h2><div class="say"><button class="sp" onclick="speak(\''+T+'\')" aria-label="Play">🔊</button><span>'+T+'</span></div><button class="mic" id="mc" aria-label="Speak">🎤</button><p class="c" id="tr">মাইকে চাপুন, তারপর বাক্যটি বলুন।</p><div class="fb c" id="fb"></div><div class="c"><button class="hint" id="sk">মাইক কাজ করছে না? এখানে চাপুন</button></div>'+nx('g4(0)');show(h);
+var R=window.SpeechRecognition||window.webkitSpeechRecognition,done=false;
+function res(ok,m){if(done)return;done=true;var f=$('fb');f.className='fb c '+(ok?'ok':'no');f.textContent=m;$('nx').style.display='inline-block';tr(ok?10:-4);$('mc').classList.remove('on')}
+$('sk').onclick=function(){res(true,'ঠিক আছে! নিজে জোরে বলেছেন ধরে নিলাম ✓')};
+if(!R){$('tr').textContent='এই ব্রাউজারে মাইক চলে না। নিজে জোরে বলে নিচের লিংকে চাপুন।';$('mc').style.display='none';return}
+$('mc').onclick=function(){if(done)return;var r=new R();r.lang='en-US';r.interimResults=false;r.onstart=function(){$('mc').classList.add('on');$('tr').textContent='শুনছি… বলুন'};
+r.onresult=function(e){var s=e.results[0][0].transcript;$('tr').textContent='“'+s+'”';var cl=function(x){return x.toLowerCase().replace(/[^a-z ]/g,'').split(' ').filter(Boolean)},t=cl(T),u=cl(s),m=t.filter(function(w){return u.indexOf(w)>-1}).length/t.length;res(m>=.7,m>=.7?'চমৎকার উচ্চারণ! ✓':'আরেকবার চেষ্টা করুন বা নিচের লিংকে চাপুন');if(m<.7)done=false};
+r.onerror=function(){$('mc').classList.remove('on');$('tr').textContent='মাইক চালু করা যায়নি। অনুমতি দিন, না হলে নিচের লিংকে চাপুন।'};r.onend=function(){$('mc').classList.remove('on')};try{r.start()}catch(e){}}}
+
+var SC=[{p:'Hello, nurse. This is my first time in this hospital.',o:[['Good morning. How are you feeling today?',15,'আজ কেমন লাগছে?','Patient smiles and relaxes.'],['What is your problem?',-15,'আপনার সমস্যা কী?','Patient looks uncomfortable.'],['Sit down.',-5,'বসুন।','Patient hesitates.']]},{p:'I have a headache. I feel a little scared.',o:[['I understand. I will help you.',15,'আমি বুঝতে পারছি। আমি সাহায্য করব।','Patient feels cared for.'],['Do not worry. It is nothing.',-10,'চিন্তা করবেন না। কিছু না।','Patient feels ignored.'],['Where does it hurt?',10,'কোথায় ব্যথা করছে?','Good, a useful question.']]},{p:'Thank you, nurse.',o:[['You are welcome. Please call me if you need anything.',15,'স্বাগতম। কিছু লাগলে আমাকে ডাকবেন।','Patient feels safe.'],['OK.',-5,'ঠিক আছে।','Patient looks unsure.'],['Next patient, please.',-15,'পরের রোগী আসুন।','Patient feels dismissed.']]}];
+function g4(n){S.i=4;var q=SC[n],h='<p class="k">Game 4 · Ward Scene ('+(n+1)+'/3)</p><h2>রোগীকে কী বলবেন?</h2><div class="pt">🧑‍🦱 '+q.p+'</div><button class="hint" id="bb">Bangla Bridge: বাংলা ইঙ্গিত দেখুন</button><div id="op">';
+sh(q.o).forEach(function(o,i){h+='<button class="opt" data-d="'+o[1]+'" data-r="'+o[3]+'">'+o[0]+'<small>'+o[2]+'</small></button>'});
+h+='</div><div class="fb" id="fb"></div>'+nx(n<2?'g4('+(n+1)+')':'end()');show(h);
+$('bb').onclick=function(){$('op').classList.toggle('bn')};
+document.querySelectorAll('#op .opt').forEach(function(b){b.onclick=function(){var d=+b.dataset.d;document.querySelectorAll('#op .opt').forEach(function(x){x.disabled=true});b.classList.add(d>0?'ok':'no');var f=$('fb');f.className='fb '+(d>0?'ok':'no');f.textContent=b.dataset.r+' ('+(d>0?'+':'')+d+')';$('nx').style.display='inline-block';tr(d)}})}
+
+function end(){S.i=5;var t=S.t,s=t>=80?3:t>=60?2:1,rk=s==3?'Staff Nurse 🏅':s==2?'Junior Nurse':'Trainee Nurse',best=s;
+try{var p=+localStorage.getItem('nsei_s1')||0;best=Math.max(p,s);localStorage.setItem('nsei_s1',best)}catch(e){}
+var m='I finished Shift 1 on NSEI Ward Duty with '+s+'/3 stars and '+t+'% patient trust! Try it: https://www.nsei.institute/lesson1.html';
+show('<div class="c"><p class="k">Shift Report</p><div class="stars">'+'⭐'.repeat(s)+'<span style="opacity:.25">'+'⭐'.repeat(3-s)+'</span></div><div class="big">'+t+'%</div><p>Patient Trust</p><h2>Rank: '+rk+'</h2><p>'+(s==3?'অসাধারণ! রোগী আপনাকে ভরসা করেন।':s==2?'ভালো হয়েছে। আরও একবার খেলে ৩ তারা পান।':'শুরুটা ভালো। আরেকবার খেলুন, ৩ তারা সম্ভব।')+'</p><a class="btn" href="https://wa.me/?text='+encodeURIComponent(m)+'">Share on WhatsApp</a><br><button class="btn g" onclick="intro()" style="margin-top:12px">Play Again</button><br><a class="hint" href="https://chat.whatsapp.com/B8TSI3IGWoi1GvJgkUjdgz" style="display:inline-block;margin-top:14px">Join the Community · পরের শিফট সবার আগে পান</a></div>');dots()}
+intro();
+</script>
+</body>
+</html>
