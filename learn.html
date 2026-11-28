@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ward Duty – NSEI Learning Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--d:#04201a;--em:#19c28b;--gold:#f4c25b;--co:#ff5a5f;--serif:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"Hind Siliguri",system-ui,"Noto Sans Bengali",Arial,sans-serif;color:#fff;font-size:17px;line-height:1.6;background:radial-gradient(700px 420px at 90% -5%,rgba(25,194,139,.4),transparent 60%),radial-gradient(600px 400px at -10% 105%,rgba(244,194,91,.22),transparent 60%),var(--d);background-attachment:fixed}
+.app{max-width:580px;margin:0 auto;padding:16px 16px 70px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.top button{background:none;border:0;color:#cfe3da;font:inherit;font-size:15px;cursor:pointer}.top b{font-family:var(--serif);color:var(--gold);font-size:18px}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:22px 18px;backdrop-filter:blur(10px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);animation:in .45s}
+@keyframes in{from{opacity:0;transform:translateY(12px)}}
+.k{color:var(--gold);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px}
+h1,h2{font-family:var(--serif);margin:0 0 8px;line-height:1.2}h1{font-size:30px}h2{font-size:23px}
+p{margin:0 0 12px;color:#d3e6dc}
+.btn,.opt{font:inherit;cursor:pointer;border:0;color:#fff}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;font-size:17px;background:linear-gradient(135deg,var(--co),#e63946);box-shadow:0 12px 28px -10px rgba(255,90,95,.7);text-decoration:none;margin-top:6px}
+.btn.g{background:rgba(255,255,255,.1);box-shadow:none;border:1px solid rgba(255,255,255,.3)}.btn[disabled]{opacity:.4}
+.opt{display:block;width:100%;text-align:left;padding:13px 15px;margin-bottom:10px;border-radius:15px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.2);font-size:17px;transition:.2s}
+.opt:hover:not([disabled]){background:rgba(255,255,255,.17)}
+.opt.ok{background:rgba(25,194,139,.3);border-color:var(--em)}.opt.no{background:rgba(255,90,95,.25);border-color:var(--co);animation:sh .35s}
+@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.say{display:flex;align-items:center;gap:12px;background:#fff;color:var(--d);border-radius:16px;padding:12px 14px;margin-bottom:12px;font-family:var(--serif);font-size:19px;line-height:1.35}
+.say span{flex:1}.sp{width:44px;height:44px;border-radius:50%;background:var(--d);color:#fff;font-size:19px;flex:none;border:0;cursor:pointer}
+.fb{min-height:26px;margin:6px 0 10px;font-weight:600}.fb.ok{color:#7ff0c4}.fb.no{color:#ff9a9d}
+.area{min-height:60px;border:2px dashed rgba(255,255,255,.3);border-radius:15px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.pool{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.w{padding:9px 15px;border-radius:12px;background:#fff;color:var(--d);font-weight:600;font-size:17px;border:0;cursor:pointer;font-family:inherit}
+.mic{width:88px;height:88px;border-radius:50%;font-size:34px;margin:6px auto 10px;display:block;background:linear-gradient(135deg,var(--em),#0e9f72);border:0;color:#fff;cursor:pointer}
+.mic.on{animation:pl 1.2s infinite}@keyframes pl{0%{box-shadow:0 0 0 0 rgba(25,194,139,.6)}100%{box-shadow:0 0 0 24px rgba(25,194,139,0)}}
+.c{text-align:center}.hint{background:none;border:0;color:var(--gold);cursor:pointer;font:inherit;font-size:15px;text-decoration:underline;padding:0;margin-bottom:10px}
+.ls .lr{display:flex;align-items:center;width:100%;gap:10px;text-align:left;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;font:inherit;border-radius:14px;padding:10px 14px;margin-bottom:8px;cursor:pointer}
+.lw{flex:1;font-weight:600;font-size:18px}.lw small{display:block;color:var(--gold);font-weight:400;font-size:15px}.sb{font-size:20px}
+.mt{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}.mb{display:block;width:100%;margin-bottom:8px;padding:11px 10px;border-radius:13px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.22);color:#fff;font:inherit;font-size:16px;cursor:pointer}
+.mb.sl{border-color:var(--gold);background:rgba(244,194,91,.22)}.mb.dn{background:rgba(25,194,139,.3);border-color:var(--em);opacity:.7}.mb.bad{border-color:var(--co);animation:sh .35s}
+.bl{display:inline-block;min-width:80px;border-bottom:3px solid var(--co);color:var(--co);text-align:center}
+.pg{margin:2px 0 16px}.pgh{display:flex;justify-content:space-between;gap:8px;font-size:13.5px;color:#cfe3da;margin-bottom:9px}.pgh b{color:var(--gold)}
+.pgt{position:relative;height:18px;border-radius:18px;background:rgba(0,0,0,.38);box-shadow:inset 0 2px 5px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.14)}
+.pgf{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:18px;background:linear-gradient(90deg,#19c28b,#7fe08a 55%,var(--gold));transition:width .9s cubic-bezier(.3,.8,.3,1);box-shadow:0 0 18px rgba(25,194,139,.6);overflow:visible}
+.pgf:before{content:"";position:absolute;inset:0;border-radius:18px;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);background-size:200% 100%;animation:shm 2.4s linear infinite}
+@keyframes shm{to{background-position:-200% 0}}
+.pgf:after{content:"";position:absolute;left:5px;right:5px;top:3px;height:4px;border-radius:4px;background:rgba(255,255,255,.4)}
+.pgm{position:absolute;right:-15px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:16px;box-shadow:0 4px 12px rgba(0,0,0,.45);z-index:2}
+.tk{position:absolute;top:4px;bottom:4px;width:2px;background:rgba(255,255,255,.28);border-radius:2px;z-index:1}
+.tc{display:grid;gap:14px}.tcd{display:block;text-decoration:none;color:#fff;border-radius:22px;padding:22px 20px;border:1px solid rgba(255,255,255,.2);background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.04));transition:.25s}
+.tcd:hover{transform:translateY(-4px);border-color:var(--gold)}.tcd .e{font-size:34px}.tcd h2{margin:6px 0 2px}.tcd small{color:var(--gold)}
+.rd{position:relative;margin:10px 0}.rs{position:absolute;inset:0;width:100%;height:100%}
+.r0{fill:none;stroke:rgba(25,194,139,.22);stroke-width:68;stroke-linecap:round;vector-effect:non-scaling-stroke}.r1{fill:none;stroke:#0a3329;stroke-width:54;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.r2{fill:none;stroke:rgba(255,255,255,.5);stroke-width:3;stroke-dasharray:2 12;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.st{position:absolute;transform:translate(-50%,-50%);background:none;border:0;color:#fff;font:inherit;cursor:pointer;padding:0}
+.cc{display:grid;place-items:center;width:62px;height:62px;border-radius:50%;font-size:24px;font-weight:700;font-family:var(--serif);background:#14392f;border:3px solid rgba(255,255,255,.25);position:relative}
+.st.dn .cc{background:linear-gradient(135deg,var(--em),#0e9f72);border-color:#b8f5dd}.st.cu .cc{background:linear-gradient(135deg,var(--gold),#ffdf8f);color:var(--d);border-color:#fff;animation:glow 1.8s infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(244,194,91,.7)}50%{box-shadow:0 0 0 16px rgba(244,194,91,0)}}
+.st.lk .cc{opacity:.55;font-size:20px}.pin{position:absolute;top:-34px;left:50%;transform:translateX(-50%);font-size:26px;animation:bob 1.4s ease-in-out infinite}@keyframes bob{50%{transform:translate(-50%,-6px)}}
+.lb{position:absolute;top:70px;left:50%;transform:translateX(-50%);width:140px;text-align:center;font-size:14px;line-height:1.3;color:#d3e6dc}.st.lk .lb{opacity:.55}.lb i{display:block;font-style:normal;color:var(--gold);font-size:13px}
+.ts{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#fff;color:var(--d);padding:11px 20px;border-radius:99px;font-weight:600;box-shadow:0 14px 30px -10px rgba(0,0,0,.6);z-index:50}
+.stars{font-size:44px;letter-spacing:6px;margin:4px 0}.big{font-family:var(--serif);font-size:48px;color:var(--gold);line-height:1}
+.cf{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:40}.cf span{position:absolute;top:-30px;font-size:24px;animation:fall 3s linear forwards}@keyframes fall{to{transform:translateY(105vh) rotate(360deg)}}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="top"><button id="bk">← NSEI</button><b>Ward Duty</b><button id="snd" aria-label="Sound on or off">🔊</button></div>
+<div id="v"></div>
+</div>
+<script src="lessons-student.js"></script>
+<script>
+var LS=window.LESSONS||{},$=function(i){return document.getElementById(i)},V=$('v'),sound=true,AC;
+var TR={student:{n:'Nursing Student',e:'🎓',d:'ক্লাস ও ক্লিনিক্যাল ডিউটির ইংরেজি',c:['Welcome the Patient','Introducing Myself & My Role','Body Parts & Where It Hurts','Asking About Pain','Taking Vital Signs','Hospital Places & Directions','Understanding Instructions from Seniors','Basic Patient Care','Medication Basics','Final Shift']},
+nurse:{n:'Registered Nurse',e:'🩺',d:'হাসপাতালের পেশাদার ইংরেজি',c:['Admitting a Patient','Medical History & Allergies','Explaining a Procedure','Medication Instructions','Calming an Anxious Patient',"Talking to the Patient’s Family",'Reporting to the Doctor','Shift Handover','Emergency Phrases','Discharge Instructions','Complaints & Refusals','Phone Calls & Messages']},
+abroad:{n:'Working Abroad',e:'✈️',d:'কথোপকথন ও ইন্টারভিউয়ের ইংরেজি',c:['Introducing Yourself Professionally','Talking About Your Experience','Strengths & Weaknesses','Common Interview Questions','“What Would You Do If…?”','Understanding Different Accents','Workplace Talk with Colleagues','Speaking Politely to Patients','“Could You Repeat That?”','Mock Interview']}};
+var STEPS=['Learn','Match','Listen & Pick','শব্দ সাজিয়ে বাক্য বানান','Say It','Challenge'];
+var shuf=function(a){return a.map(function(x){return[Math.random(),x]}).sort(function(p,q){return p[0]-q[0]}).map(function(x){return x[1]})};
+function ld(){try{return JSON.parse(localStorage.getItem('nsei_p'))||{}}catch(e){return{}}}
+function sv(p){try{localStorage.setItem('nsei_p',JSON.stringify(p))}catch(e){}}
+function speak(t){if(!sound)return;try{var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=.88;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function sfx(ok){if(!sound)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();var t=AC.currentTime;(ok?[660,880,1175]:[220,170]).forEach(function(f,i){var o=AC.createOscillator(),g=AC.createGain();o.type=ok?'sine':'triangle';o.frequency.value=f;g.gain.setValueAtTime(.0001,t+i*.1);g.gain.exponentialRampToValueAtTime(.18,t+i*.1+.02);g.gain.exponentialRampToValueAtTime(.0001,t+i*.1+.28);o.connect(g);g.connect(AC.destination);o.start(t+i*.1);o.stop(t+i*.1+.3)})}catch(e){}}
+$('snd').onclick=function(){sound=!sound;this.textContent=sound?'🔊':'🔇';if(!sound)try{speechSynthesis.cancel()}catch(e){}};
+function toast(m){var t=document.createElement('div');t.className='ts';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},2200)}
+function setBk(l,f){$('bk').textContent=l;$('bk').onclick=f}
+
+function home(){setBk('← NSEI',function(){location.href='index.html'});var P=ld(),h='<p class="k">Ward Duty</p><h1>আপনার যাত্রা বেছে নিন</h1><p>প্রতিটি পথ একটি রাস্তা। একটি লেসন শেষ করলে পরেরটি খুলে যায়।</p><div class="tc">';
+Object.keys(TR).forEach(function(k){var T=TR[k],n=(P[k]||[]).filter(function(x){return x!=null}).length,live=(LS[k]||[]).length;h+='<a class="tcd" href="#'+k+'"><div class="e">'+T.e+'</div><h2>'+T.n+'</h2><p style="margin:0">'+T.d+'</p><small>'+T.c.length+' lessons · '+(live?n+' সম্পন্ন':'Coming Soon')+'</small></a>'});
+V.innerHTML=h+'</div>'}
+
+function road(k){setBk('← Journeys',function(){location.hash=''});var T=TR[k],P=ld()[k]||[],n=T.c.length,H=n*132+80,pts=[],lv=LS[k]||[],done=P.filter(function(x){return x!=null}).length;
+for(var j=0;j<n;j++)pts.push([50+30*Math.sin(j*1.3),70+j*132]);
+var d='M'+pts[0][0]+' '+pts[0][1];for(j=1;j<n;j++)d+=' C'+pts[j-1][0]+' '+(pts[j-1][1]+66)+','+pts[j][0]+' '+(pts[j][1]-66)+','+pts[j][0]+' '+pts[j][1];
+var h='<p class="k">'+T.e+' '+T.n+'</p><h1>Your Journey</h1><p>'+done+' / '+n+' লেসন সম্পন্ন'+(lv.length?'':' · এই পথ শীঘ্রই আসছে')+'</p><div class="rd" style="height:'+H+'px"><svg class="rs" viewBox="0 0 100 '+H+'" preserveAspectRatio="none"><path class="r0" d="'+d+'"/><path class="r1" d="'+d+'"/><path class="r2" d="'+d+'"/></svg>';
+for(j=0;j<n;j++){var dn=P[j]!=null,op=j==0||P[j-1]!=null,has=!!lv[j],cu=op&&!dn&&has,cls=dn?'dn':cu?'cu':'lk',last=j==n-1,inner=dn?(last?'🏆':'✓'):cu?(last?'🏁':j+1):'🔒';
+h+='<button class="st '+cls+'" style="left:'+pts[j][0]+'%;top:'+pts[j][1]+'px" data-j="'+j+'" aria-label="Lesson '+(j+1)+'"><span class="cc">'+(cu?'<span class="pin">🧑‍⚕️</span>':'')+inner+'</span><span class="lb">'+(j+1)+'. '+T.c[j]+(dn?'<i>'+'⭐'.repeat(P[j])+'</i>':!has?'<i>Coming Soon</i>':'')+'</span></button>'}
+V.innerHTML=h+'</div>';
+document.querySelectorAll('.st').forEach(function(b){b.onclick=function(){var j=+b.dataset.j;if(!lv[j])toast('শীঘ্রই আসছে ✨');else if(!(j==0||P[j-1]!=null))toast('আগের লেসন শেষ করলে এটি খুলবে 🔒');else run(k,j)}});
+var c=document.querySelector('.st.cu');if(c)setTimeout(function(){c.scrollIntoView({block:'center',behavior:'smooth'})},200)}
+
+var Q,qi,D,W,wr,tr,Lc,Tk,Li,nxb='<button class="btn" id="nx" onclick="nx()" style="display:none">Next →</button>';
+function run(k,j){Tk=k;Li=j;Lc=LS[k][j];Q=[{t:'learn',w:2,s:0},{t:'match',w:5,s:1}];var i;
+for(i=0;i<4;i++)Q.push({t:'pick',d:Lc.sn[i],w:1,s:2});for(i=2;i<6;i++)Q.push({t:'build',d:Lc.sn[i],w:1,s:3});for(i=3;i<6;i++)Q.push({t:'say',d:Lc.sn[i],w:1,s:4});
+Lc.fb.forEach(function(d){Q.push({t:'fill',d:d,w:1,s:5})});Lc.pr.forEach(function(d){Q.push({t:'pr',d:d,w:1,s:5})});
+W=Q.reduce(function(a,q){return a+q.w},0);qi=0;D=0;wr=0;tr=50;setBk('← Road',function(){speechSynthesis&&speechSynthesis.cancel();road(Tk)});
+var tks='',cum=0;for(var s=0;s<5;s++){Q.forEach(function(q){if(q.s==s)cum+=q.w});tks+='<i class="tk" style="left:'+(cum/W*100)+'%"></i>'}
+V.innerHTML='<h2 style="font-size:20px;margin-bottom:10px">'+(Li+1)+'. '+TR[Tk].c[Li]+'</h2><div class="pg"><div class="pgh"><span id="pst"></span><span><b id="ppc">0%</b> · 💚 Trust <b id="trv">50</b></span></div><div class="pgt"><div class="pgf" id="pgf"><i class="pgm">🩺</i></div>'+tks+'</div></div><div class="card" id="cd"></div>';task()}
+function pg(){var q=Q[qi];$('pgf').style.width=(D/W*100)+'%';$('ppc').textContent=Math.round(D/W*100)+'%';$('pst').textContent='Step '+(q.s+1)+' of 6 · '+STEPS[q.s]}
+function task(){if(qi>=Q.length)return fin();pg();TK[Q[qi].t](Q[qi]);window.scrollTo(0,0)}
+function nx(){D+=Q[qi].w;qi++;if(qi>=Q.length){$('pgf').style.width='100%';$('ppc').textContent='100%'}task()}
+function ans(ok){sfx(ok);if(!ok)wr++;tr=Math.max(0,Math.min(100,tr+(ok?4:-4)));$('trv').textContent=tr}
+function sh(){$('nx').style.display='inline-block'}
+function K(q){return '<p class="k">'+STEPS[q.s]+'</p>'}
+function bar(en){return '<div class="say"><button class="sp" aria-label="Play">🔊</button><span>'+en+'</span></div>'}
+function hook(en){var b=document.querySelector('.say .sp');if(b)b.onclick=function(){speak(en)};setTimeout(function(){speak(en)},350)}
+function cl(x){return x.toLowerCase().replace(/[^a-z ]/g,'').split(' ').filter(Boolean)}
+
+var TK={
+learn:function(q){var h=K(q)+'<h2>নতুন শব্দ ও বাক্য শিখুন</h2><p>প্রতিটি লাইনে চাপুন, শুনুন ও জোরে বলুন।</p><div class="ls">';
+Lc.ph.forEach(function(p,i){h+='<button class="lr" data-i="'+i+'"><span class="lw">'+p[0]+'<small>'+p[1]+'</small></span><span class="sb">🔊</span></button>'});
+$('cd').innerHTML=h+'</div><button class="btn" onclick="nx()">Continue →</button>';document.querySelectorAll('.lr').forEach(function(b){b.onclick=function(){speak(Lc.ph[b.dataset.i][0])}})},
+match:function(q){var P=shuf(Lc.ph.filter(function(p){return p[0].length<=26})).slice(0,5),L=P.map(function(p,i){return i}),R=shuf(L),sel=null,left=P.length,h=K(q)+'<h2>জোড়া মেলান</h2><p>ইংরেজি ও তার বাংলা অর্থ মেলান।</p><div class="mt"><div>';
+L.forEach(function(i){h+='<button class="mb" data-s="l" data-i="'+i+'">'+P[i][0]+'</button>'});h+='</div><div>';R.forEach(function(i){h+='<button class="mb" data-s="r" data-i="'+i+'">'+P[i][1]+'</button>'});
+$('cd').innerHTML=h+'</div></div><div class="fb" id="fb"></div>'+nxb;
+document.querySelectorAll('.mb').forEach(function(b){b.onclick=function(){if(b.classList.contains('dn'))return;if(b.dataset.s=='l')speak(P[b.dataset.i][0]);
+if(!sel||sel.dataset.s==b.dataset.s){if(sel)sel.classList.remove('sl');sel=b;b.classList.add('sl');return}
+var a=sel,ok=a.dataset.i==b.dataset.i;sel=null;a.classList.remove('sl');
+if(ok){a.classList.add('dn');b.classList.add('dn');ans(true);if(--left==0){$('fb').className='fb ok';$('fb').textContent='সব মিলেছে! ✓';sh()}}
+else{ans(false);a.classList.add('bad');b.classList.add('bad');setTimeout(function(){a.classList.remove('bad');b.classList.remove('bad')},450)}}})},
+pick:function(q){var d=q.d,o=[[d[1],1]];shuf(Lc.sn.filter(function(s){return s!=d})).slice(0,2).forEach(function(s){o.push([s[1],0])});
+var h=K(q)+'<h2>সঠিক বাংলা অর্থ বাছুন</h2>'+bar(d[0])+'<div id="op">';shuf(o).forEach(function(x){h+='<button class="opt" data-k="'+x[1]+'">'+x[0]+'</button>'});
+$('cd').innerHTML=h+'</div><div class="fb" id="fb"></div>'+nxb;hook(d[0]);
+document.querySelectorAll('#op .opt').forEach(function(b){b.onclick=function(){var ok=b.dataset.k=='1';document.querySelectorAll('#op .opt').forEach(function(x){x.disabled=true;if(x.dataset.k=='1')x.classList.add('ok')});if(!ok)b.classList.add('no');ans(ok);$('fb').className='fb '+(ok?'ok':'no');$('fb').textContent=ok?'Correct! ✓':'প্রায়। সঠিক উত্তরটি সবুজ।';sh()}})},
+build:function(q){var d=q.d,w=d[0].split(' '),a=[],ord=shuf(w.map(function(x,i){return i}));
+$('cd').innerHTML=K(q)+'<h2>শব্দ সাজিয়ে বাক্য বানান</h2>'+bar(d[0])+'<p>অর্থ: <b style="color:var(--gold)">'+d[1]+'</b></p><div class="area" id="ar"></div><div class="pool" id="pl"></div><button class="btn g" id="ck" style="margin:0 8px 8px 0">Check</button><div class="fb" id="fb"></div>'+nxb;hook(d[0]);
+function draw(){var p='',r='';ord.forEach(function(i){if(a.indexOf(i)<0)p+='<button class="w" data-i="'+i+'">'+w[i]+'</button>'});a.forEach(function(i){r+='<button class="w" data-i="'+i+'">'+w[i]+'</button>'});$('pl').innerHTML=p;$('ar').innerHTML=r;
+document.querySelectorAll('#pl .w').forEach(function(b){b.onclick=function(){a.push(+b.dataset.i);draw()}});document.querySelectorAll('#ar .w').forEach(function(b){b.onclick=function(){a.splice(a.indexOf(+b.dataset.i),1);draw()}})}draw();
+$('ck').onclick=function(){if(a.length<w.length)return;var ok=a.map(function(i){return w[i]}).join(' ')==d[0];$('ck').disabled=true;ans(ok);if(ok)speak(d[0]);$('fb').className='fb '+(ok?'ok':'no');$('fb').textContent=ok?'Perfect sentence! ✓':'ঠিক বাক্য: '+d[0];sh()}},
+say:function(q){var d=q.d,R=window.SpeechRecognition||window.webkitSpeechRecognition,done=false;
+$('cd').innerHTML=K(q)+'<h2>জোরে বলুন</h2>'+bar(d[0])+'<p>অর্থ: <b style="color:var(--gold)">'+d[1]+'</b></p><button class="mic" id="mc" aria-label="Speak">🎤</button><p class="c" id="tx">মাইকে চাপুন, তারপর বাক্যটি বলুন।</p><div class="fb c" id="fb"></div><div class="c"><button class="hint" id="sk">মাইক কাজ করছে না? এখানে চাপুন</button></div>'+nxb;hook(d[0]);
+function res(ok,m){done=true;$('fb').className='fb c '+(ok?'ok':'no');$('fb').textContent=m;ans(ok);sh();$('mc').classList.remove('on')}
+$('sk').onclick=function(){if(!done)res(true,'ঠিক আছে! জোরে বলেছেন ধরে নিলাম ✓')};
+if(!R){$('tx').textContent='এই ব্রাউজারে মাইক চলে না। নিজে জোরে বলে নিচের লিংকে চাপুন।';$('mc').style.display='none';return}
+$('mc').onclick=function(){if(done)return;var r=new R();r.lang='en-US';r.interimResults=false;r.onstart=function(){$('mc').classList.add('on');$('tx').textContent='শুনছি… বলুন'};
+r.onresult=function(e){var s=e.results[0][0].transcript,t=cl(d[0]),u=cl(s),m=t.filter(function(x){return u.indexOf(x)>-1}).length/t.length;$('tx').textContent='“'+s+'”';
+if(m>=.7)res(true,'চমৎকার উচ্চারণ! ✓');else{sfx(false);$('fb').className='fb c no';$('fb').textContent='আরেকবার চেষ্টা করুন, বা নিচের লিংকে চাপুন'}};
+r.onerror=function(){$('mc').classList.remove('on');$('tx').textContent='মাইক চালু করা যায়নি। অনুমতি দিন, না হলে নিচের লিংকে চাপুন।'};r.onend=function(){$('mc').classList.remove('on')};try{r.start()}catch(e){}}},
+fill:function(q){var d=q.d,o=shuf([d[1]].concat(d[2])),h=K(q)+'<h2>ফাঁকা জায়গা পূরণ করুন</h2><div class="say"><button class="sp" aria-label="Play">🔊</button><span id="sn">'+d[0].replace('___','<u class="bl">&nbsp;&nbsp;&nbsp;</u>')+'</span></div><div id="op">';
+o.forEach(function(x){h+='<button class="opt" data-w="'+x+'">'+x+'</button>'});$('cd').innerHTML=h+'</div><div class="fb" id="fb"></div>'+nxb;var full=d[0].replace('___',d[1]);hook(full);
+document.querySelectorAll('#op .opt').forEach(function(b){b.onclick=function(){var ok=b.dataset.w==d[1];document.querySelectorAll('#op .opt').forEach(function(x){x.disabled=true;if(x.dataset.w==d[1])x.classList.add('ok')});if(!ok)b.classList.add('no');ans(ok);$('sn').textContent=full;speak(full);$('fb').className='fb '+(ok?'ok':'no');$('fb').textContent=ok?'Correct! ✓':'সঠিক শব্দ: '+d[1];sh()}})},
+pr:function(q){var d=q.d;$('cd').innerHTML=K(q)+'<h2>নম্র নাকি রুক্ষ?</h2>'+bar(d[0])+'<p>অর্থ: <b style="color:var(--gold)">'+d[1]+'</b></p><div id="op"><button class="opt" data-k="1">😊 Polite · নম্র</button><button class="opt" data-k="0">😠 Not polite · রুক্ষ</button></div><div class="fb" id="fb"></div>'+nxb;hook(d[0]);
+document.querySelectorAll('#op .opt').forEach(function(b){b.onclick=function(){var ok=b.dataset.k==d[2];document.querySelectorAll('#op .opt').forEach(function(x){x.disabled=true;if(x.dataset.k==d[2])x.classList.add('ok')});if(!ok)b.classList.add('no');ans(ok);$('fb').className='fb '+(ok?'ok':'no');$('fb').textContent=ok?'ঠিক! ✓':'এটি '+(d[2]?'নম্র':'রুক্ষ')+' বাক্য।';sh()}})}
+};
+
+function fin(){var s=wr<=2?3:wr<=6?2:1,p=ld(),a=p[Tk]||[];a[Li]=Math.max(a[Li]||0,s);for(var i=0;i<a.length;i++)if(a[i]===undefined)a[i]=null;p[Tk]=a;sv(p);sfx(true);setTimeout(function(){sfx(true)},500);
+var T=TR[Tk],nxt=Li+1<T.c.length,has=nxt&&LS[Tk][Li+1],last=Li==T.c.length-1,m='I finished "'+T.c[Li]+'" on NSEI Ward Duty with '+s+'/3 stars! https://www.nsei.institute/learn.html',cf='';
+for(i=0;i<26;i++)cf+='<span style="left:'+Math.random()*100+'%;animation-delay:'+Math.random()*1.2+'s">'+['🎉','⭐','✨','💚'][i%4]+'</span>';
+$('pgf').style.width='100%';
+$('cd').innerHTML='<div class="cf">'+cf+'</div><div class="c"><p class="k">'+(last?'Journey Complete':'Lesson Complete')+'</p><div class="stars">'+'⭐'.repeat(s)+'<span style="opacity:.25">'+'⭐'.repeat(3-s)+'</span></div><div class="big">'+tr+'%</div><p>Patient Trust</p><h2>'+(last?'🏆 ':'')+T.c[Li]+'</h2><p>'+(s==3?'অসাধারণ! দারুণ করেছেন।':s==2?'ভালো হয়েছে! আরেকবার খেলে ৩ তারা পেতে পারেন।':'শুরুটা ভালো। আরেকবার খেললে আরও ভালো হবে।')+'</p>'+
+(has?'<p style="color:var(--gold)">🔓 Lesson '+(Li+2)+' খুলে গেছে: '+T.c[Li+1]+'</p><button class="btn" id="n1">Start Lesson '+(Li+2)+' →</button>':nxt?'<p style="color:var(--gold)">পরের লেসন শীঘ্রই আসছে। সবার আগে জানতে কমিউনিটিতে যোগ দিন।</p>':'')+
+'<br><a class="btn g" href="https://wa.me/?text='+encodeURIComponent(m)+'" style="margin-top:10px">Share on WhatsApp</a><br><button class="btn g" id="n2" style="margin-top:10px">Back to Road</button><br><a class="hint" href="https://chat.whatsapp.com/B8TSI3IGWoi1GvJgkUjdgz" style="display:inline-block;margin-top:12px">Join the Community</a></div>';
+if(has)$('n1').onclick=function(){run(Tk,Li+1)};$('n2').onclick=function(){road(Tk)}}
+
+function route(){try{speechSynthesis.cancel()}catch(e){}var h=location.hash.slice(1);TR[h]?road(h):home();window.scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
