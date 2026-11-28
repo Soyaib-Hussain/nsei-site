@@ -71,9 +71,8 @@ p{margin:0 0 12px;color:#d3e6dc}
 <div class="top"><button id="bk">← NSEI</button><b>Ward Duty</b><button id="snd" aria-label="Sound on or off">🔊</button></div>
 <div id="v"></div>
 </div>
-<script src="lessons-student.js"></script>
 <script>
-var LS=window.LESSONS||{},$=function(i){return document.getElementById(i)},V=$('v'),sound=true,AC;
+var LS={},$=function(i){return document.getElementById(i)},V=$('v'),sound=true,AC;
 var TR={student:{n:'Nursing Student',e:'🎓',d:'ক্লাস ও ক্লিনিক্যাল ডিউটির ইংরেজি',c:['Welcome the Patient','Introducing Myself & My Role','Body Parts & Where It Hurts','Asking About Pain','Taking Vital Signs','Hospital Places & Directions','Understanding Instructions from Seniors','Basic Patient Care','Medication Basics','Final Shift']},
 nurse:{n:'Registered Nurse',e:'🩺',d:'হাসপাতালের পেশাদার ইংরেজি',c:['Admitting a Patient','Medical History & Allergies','Explaining a Procedure','Medication Instructions','Calming an Anxious Patient',"Talking to the Patient’s Family",'Reporting to the Doctor','Shift Handover','Emergency Phrases','Discharge Instructions','Complaints & Refusals','Phone Calls & Messages']},
 abroad:{n:'Working Abroad',e:'✈️',d:'কথোপকথন ও ইন্টারভিউয়ের ইংরেজি',c:['Introducing Yourself Professionally','Talking About Your Experience','Strengths & Weaknesses','Common Interview Questions','“What Would You Do If…?”','Understanding Different Accents','Workplace Talk with Colleagues','Speaking Politely to Patients','“Could You Repeat That?”','Mock Interview']}};
@@ -165,7 +164,8 @@ $('cd').innerHTML='<div class="cf">'+cf+'</div><div class="c"><p class="k">'+(la
 if(has)$('n1').onclick=function(){run(Tk,Li+1)};$('n2').onclick=function(){road(Tk)}}
 
 function route(){try{speechSynthesis.cancel()}catch(e){}var h=location.hash.slice(1);TR[h]?road(h):home();window.scrollTo(0,0)}
-addEventListener('hashchange',route);route();
+function loadData(cb){var ks=Object.keys(TR),n=ks.length;ks.forEach(function(k){var tr=['lessons/'+k+'.js','lessons-'+k+'.js'];(function t(i){if(i>=tr.length){if(--n==0)cb();return}var e=document.createElement('script');e.src=tr[i];e.onload=function(){if(--n==0)cb()};e.onerror=function(){e.remove();t(i+1)};document.head.appendChild(e)})(0)})}
+addEventListener('hashchange',route);loadData(function(){LS=window.LESSONS||{};route()});
 </script>
 </body>
 </html>
